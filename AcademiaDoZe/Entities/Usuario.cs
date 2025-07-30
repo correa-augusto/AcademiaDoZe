@@ -1,16 +1,18 @@
-﻿using System;
+﻿//AUGUSTO DOS SANTOS CORREA
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AcademiaDoZe.Domain.Enums;
 
 namespace AcademiaDoZe
 {
     public class Usuario
     {
-        public int Id { get; set; }
-        public string Nome { get; set; }
-        public TipoUsuario Tipo { get; set; }
+        public int Id { get; }
+        public string Nome { get; }
+        public TipoUsuario Tipo { get; }
 
         public List<string> ObterPermissoes()
         {
