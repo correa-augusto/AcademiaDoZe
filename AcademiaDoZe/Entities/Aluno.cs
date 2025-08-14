@@ -12,6 +12,7 @@ using AcademiaDoZe.Domain.ValueObject;
 namespace AcademiaDoZe.Domain.Entities;
 public sealed  class Aluno : Pessoa
 {
+    public string Objetivo { get; }
     private Aluno(string nomeCompleto,
     string cpf,
 
@@ -22,13 +23,15 @@ public sealed  class Aluno : Pessoa
     string numero,
     string complemento,
     string senha,
+    string objetivo,
     Arquivo foto)
 
     : base(nomeCompleto, cpf, dataNascimento, telefone, email, endereco, numero, complemento, senha, foto)
     {
+        Objetivo = objetivo;
     }
 
-    public static Aluno Criar(string nome, string cpf, DateOnly dataNascimento, string telefone, string email, Endereco endereco, string numero, string complemento, string senha, Arquivo foto)
+    public static Aluno Criar(string nome, string cpf, DateOnly dataNascimento, string telefone, string email, Endereco endereco, string numero, string complemento, string senha, string objetivo, Arquivo foto)
     {
         if (string.IsNullOrWhiteSpace(nome)) throw new DomainException("NOME_OBRIGATORIO");
 
@@ -44,7 +47,7 @@ public sealed  class Aluno : Pessoa
 
         if (string.IsNullOrWhiteSpace(telefone)) throw new ArgumentException("Telefone não pode ser nulo ou vazio.");
 
-        if (!string.IsNullOrWhiteSpace(email)) throw new ArgumentException("email não pode ser nulo ou vazio.");
+        if (string.IsNullOrWhiteSpace(email)) throw new ArgumentException("email não pode ser nulo ou vazio.");
 
         if(endereco == null) throw new ArgumentNullException(nameof(endereco));
 
@@ -54,6 +57,6 @@ public sealed  class Aluno : Pessoa
 
         if (foto == null) throw new ArgumentNullException(nameof(foto));
 
-        return new Aluno(nome, cpf, dataNascimento, telefone, email, endereco, numero, complemento, senha, foto);
+        return new Aluno(nome, cpf, dataNascimento, telefone, email, endereco, numero, complemento, senha, objetivo, foto);
     }
 }

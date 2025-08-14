@@ -13,16 +13,16 @@ public sealed class Acesso : Entity
     public Pessoa AlunoColaborador { get; }
     public DateTime DataHoraEntrada { get; }
 
-    public DateTime DataHoraSaida { get; }
+    public DateTime? DataHoraSaida { get; }
 
-    private Acesso(Pessoa pessoa, DateTime dataHoraEntrada, DateTime dataHoraSaida)
+    private Acesso(Pessoa pessoa, DateTime dataHoraEntrada, DateTime? dataHoraSaida)
     {
         AlunoColaborador = pessoa;
         DataHoraEntrada = dataHoraEntrada;
         DataHoraSaida = dataHoraSaida;
     }
 
-    public static Acesso Criar(Pessoa pessoa,  DateTime dataHoraSaida, DateTime dataHoraEntrada )
+    public static Acesso Criar(Pessoa pessoa, DateTime dataHoraEntrada, DateTime? dataHoraSaida)
     {
         if (pessoa == null) throw new ArgumentNullException(nameof(pessoa));
 

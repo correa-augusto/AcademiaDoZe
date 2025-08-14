@@ -2,7 +2,7 @@
 namespace AcademiaDoZe.Domain.Exceptions
 {
     // classe base para exceções de domínio
-    // pemitindo exceções específicas de regras de negócio
+   // permitindo exceções específicas de regras de negócio
     public class DomainException : Exception
     {
         public DomainException(string message) : base(message)

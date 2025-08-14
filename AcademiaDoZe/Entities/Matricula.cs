@@ -45,6 +45,8 @@ public sealed class Matricula : Entity
     public static Matricula Criar(Aluno alunoMatricula, TipoPlano plano, DateOnly dataInicio, DateOnly dataFim, string objetivo, Restricoes restricoesMedicas, Arquivo laudoMedico)
     {
 
+        if (alunoMatricula == null) throw new ArgumentNullException(nameof(alunoMatricula));
+
         int idade = DateOnly.FromDateTime(DateTime.Today).Year - alunoMatricula.DataNascimento.Year;
 
         DateOnly hoje = DateOnly.FromDateTime(DateTime.Today);
@@ -55,8 +57,6 @@ public sealed class Matricula : Entity
 
         if (restricoesMedicas != Restricoes.None && laudoMedico == null) throw new ArgumentException("Alunos com restrições de saúde precisam apresentar laudo médico.");
 
-        if (alunoMatricula == null) throw new ArgumentNullException(nameof(alunoMatricula));
-
         if (!Enum.IsDefined(typeof(TipoPlano), plano)) throw new ArgumentException("Tipo de plano inválido.");
 
         if (dataInicio > DateOnly.FromDateTime(DateTime.Today)) throw new ArgumentException("Data de inicio não pode ser no futuro.");
@@ -66,8 +66,6 @@ public sealed class Matricula : Entity
         if (string.IsNullOrEmpty(objetivo)) throw new ArgumentException("objetivo deve ser preenchido");
 
         if (!Enum.IsDefined(typeof(Restricoes), restricoesMedicas)) throw new ArgumentException("Tipo de restrição inválido.");
-
-        if (laudoMedico == null) throw new ArgumentNullException(nameof(laudoMedico));
 
         return new Matricula(alunoMatricula, plano, dataInicio, dataFim, objetivo, restricoesMedicas, laudoMedico);
     }

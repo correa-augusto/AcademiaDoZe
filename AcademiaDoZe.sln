@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197 d17.13
+VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcademiaDoZe", "AcademiaDoZe\AcademiaDoZe.csproj", "{A75DD2E8-2A8F-4710-87C6-B5C9E563968D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcademiaDoZe.Domain.Tests", "AcademiaDoZe.Domain.Tests\AcademiaDoZe.Domain.Tests.csproj", "{746C7D46-5512-4FD1-8F44-D299D41697AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcedemiaDoZe.Infrastructure", "AcedemiaDoZe.Infrastructure\AcedemiaDoZe.Infrastructure.csproj", "{93788F35-75B4-4EF5-9274-1F484114654F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{A75DD2E8-2A8F-4710-87C6-B5C9E563968D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A75DD2E8-2A8F-4710-87C6-B5C9E563968D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A75DD2E8-2A8F-4710-87C6-B5C9E563968D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{746C7D46-5512-4FD1-8F44-D299D41697AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{746C7D46-5512-4FD1-8F44-D299D41697AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{746C7D46-5512-4FD1-8F44-D299D41697AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{746C7D46-5512-4FD1-8F44-D299D41697AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93788F35-75B4-4EF5-9274-1F484114654F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93788F35-75B4-4EF5-9274-1F484114654F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93788F35-75B4-4EF5-9274-1F484114654F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93788F35-75B4-4EF5-9274-1F484114654F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
