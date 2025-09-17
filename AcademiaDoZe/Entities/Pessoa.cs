@@ -16,30 +16,33 @@ namespace AcademiaDoZe
     {
         public abstract class Pessoa : Entity
         {
+            public int id { get; }
             public string Nome { get; }
             public string Cpf { get; }
             public DateOnly DataNascimento { get;  }
             public string Telefone { get; }
             public string Email { get; }
-            public Endereco Endereco { get; }
+            public Logradouro Endereco { get; }
             public string Numero { get;  }
             public string Complemento { get; }
             public string Senha { get; }
             public Arquivo Foto { get; }
 
 
-            public Pessoa(string nome,
+            public Pessoa( int id,
+                           string nome,
                            string cpf,
                            DateOnly dataNascimento,
                            string telefone,
                            string email,
-                           Endereco endereco,
+                           Logradouro endereco,
                            string numero,
                            string complemento,
                            string senha,
                            Arquivo foto) : base()
 
             {
+                Id = id;
                 Nome = nome;
                 Cpf = cpf;
                 DataNascimento = dataNascimento;

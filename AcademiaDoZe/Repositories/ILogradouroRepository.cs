@@ -1,12 +1,12 @@
 ﻿using AcademiaDoZe.Domain.Entities;
 namespace AcademiaDoZe.Domain.Repositories
 {
-    public interface ILogradouroRepository : IRepository<Endereco>
+    public interface ILogradouroRepository : IRepository<Logradouro>
     {
         // Métodos específicos do domínio
 
-        Task<Endereco?> ObterPorCep(string cep);
+        Task<Logradouro?> ObterPorCep(string cep);
 
-        Task<IEnumerable<Endereco>> ObterPorCidade(string cidade);
+        Task<IEnumerable<Logradouro>> ObterPorCidade(string cidade);
     }
 }

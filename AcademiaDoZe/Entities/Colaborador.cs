@@ -15,31 +15,33 @@ namespace AcademiaDoZe.Domain.Entities;
 public sealed class Colaborador : Pessoa
 {
     public DateOnly DataAdmissao {get;}
-    public PessoaTipo Tipo { get; }
+    public TipoUsuario Tipo { get; }
     public TipoColaborador Vinculo { get; }
-    private Colaborador(string nomeCompleto,
+    private Colaborador(
+    
+    int id,
+    string nomeCompleto,
     string cpf,
-
     DateOnly dataNascimento,
     string telefone,
     string email,
-    Endereco endereco,
+    Logradouro endereco,
     string numero,
     string complemento,
     string senha,
     Arquivo foto,
     DateOnly dataAdmissao,
-    PessoaTipo tipo,
+    TipoUsuario tipo,
     TipoColaborador vinculo)
 
-    : base(nomeCompleto, cpf, dataNascimento, telefone, email, endereco, numero, complemento, senha, foto)
+    : base(id, nomeCompleto, cpf, dataNascimento, telefone, email, endereco, numero, complemento, senha, foto)
     {
         DataAdmissao = dataAdmissao;
         Tipo = tipo;
         Vinculo = vinculo;
     }
 
-    public static Colaborador Criar(string nome, string cpf, DateOnly dataNascimento, string telefone, string email, Endereco endereco, string numero, string complemento, string senha, Arquivo foto, DateOnly dataAdmissao, PessoaTipo tipo, TipoColaborador vinculo)
+    public static Colaborador Criar(int id, string nome, string cpf, DateOnly dataNascimento, string telefone, string email, Logradouro endereco, string numero, string complemento, string senha, Arquivo foto, DateOnly dataAdmissao, TipoUsuario tipo, TipoColaborador vinculo)
     {
         if (string.IsNullOrWhiteSpace(nome)) throw new DomainException("NOME_OBRIGATORIO");
 
@@ -65,11 +67,11 @@ public sealed class Colaborador : Pessoa
 
         if (dataAdmissao > DateOnly.FromDateTime(DateTime.Today)) throw new ArgumentException("Data de admissão não pode ser no futuro.");
 
-        if (!Enum.IsDefined(typeof(PessoaTipo), tipo))  throw new ArgumentException("Tipo de usuário inválido.");
+        if (!Enum.IsDefined(typeof(TipoUsuario), tipo))  throw new ArgumentException("Tipo de usuário inválido.");
 
         if (!Enum.IsDefined(typeof(TipoColaborador), vinculo)) throw new ArgumentException("Tipo de usuário inválido.");
 
 
-        return new Colaborador(nome, cpf, dataNascimento, telefone, email, endereco, numero, complemento, senha, foto, dataAdmissao, tipo, vinculo);
+        return new Colaborador(id, nome, cpf, dataNascimento, telefone, email, endereco, numero, complemento, senha, foto, dataAdmissao, tipo, vinculo);
     }
 }

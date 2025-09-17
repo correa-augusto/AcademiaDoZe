@@ -14,13 +14,14 @@ namespace AcademiaDoZe.Domain.Tests
 {
     public class ColaboradorDomainTests
     {
-        private Endereco GetValidarLogradouro() => Endereco.Criar("12345678", "Rua A", "Centro", "Cidade", "SP", "Brasil");
+        private Logradouro GetValidarLogradouro() => Logradouro.Criar(0, "12345678", "Rua A", "Centro", "Cidade", "SP", "Brasil");
         private Arquivo GetValidarArquivo() => Arquivo.Criar(new byte[1]);
 
         [Fact]
         public void CriarColaborador_ComDadosValidos_DeveCriarObjeto()
         {
             // Arrange
+            var id = 0;
             var nome = "Maria Oliveira";
             var cpf = "12345678901";
             var dataNascimento = DateOnly.FromDateTime(DateTime.Today.AddYears(-25));
@@ -36,7 +37,7 @@ namespace AcademiaDoZe.Domain.Tests
             var vinculo = TipoColaborador.CLT;
 
             // Act
-            var colaborador = Colaborador.Criar(nome, cpf, dataNascimento, telefone, email, endereco, numero, complemento, senha, foto, dataAdmissao, tipo, vinculo);
+            var colaborador = Colaborador.Criar(id, nome, cpf, dataNascimento, telefone, email, endereco, numero, complemento, senha, foto, dataAdmissao, tipo, vinculo);
 
             // Assert
             Assert.NotNull(colaborador);
@@ -59,7 +60,7 @@ namespace AcademiaDoZe.Domain.Tests
 
             // Act
             var ex = Assert.Throws<DomainException>(() =>
-                Colaborador.Criar("", cpf, dataNascimento, telefone, email, endereco, numero, complemento, senha, foto, dataAdmissao, tipo, vinculo)
+                Colaborador.Criar(0, "", cpf, dataNascimento, telefone, email, endereco, numero, complemento, senha, foto, dataAdmissao, tipo, vinculo)
             );
 
             // Assert
@@ -71,6 +72,7 @@ namespace AcademiaDoZe.Domain.Tests
         public void CriarColaborador_ComCPFInvalido_DeveLancarExcecao()
         {
             // Arrange
+            var id = 0;
             var nome = "Maria Oliveira";
             var cpf = "123"; // inválido
             var dataNascimento = DateOnly.FromDateTime(DateTime.Today.AddYears(-25));
@@ -86,7 +88,7 @@ namespace AcademiaDoZe.Domain.Tests
             var vinculo = TipoColaborador.CLT;
 
             // Act & Assert
-            var ex = Assert.Throws<DomainException>(() => Colaborador.Criar(nome, cpf, dataNascimento, telefone, email, endereco, numero, complemento, senha, foto, dataAdmissao, tipo, vinculo));
+            var ex = Assert.Throws<DomainException>(() => Colaborador.Criar(id, nome, cpf, dataNascimento, telefone, email, endereco, numero, complemento, senha, foto, dataAdmissao, tipo, vinculo));
 
             Assert.Equal("CPF_DIGITOS", ex.Message);
         }
@@ -96,6 +98,7 @@ namespace AcademiaDoZe.Domain.Tests
         public void CriarColaborador_ComDataAdmissaoFutura_DeveLancarExcecao()
         {
             // Arrange
+            var id = 0;
             var nome = "Maria Oliveira";
             var cpf = "12345678901";
             var dataNascimento = DateOnly.FromDateTime(DateTime.Today.AddYears(-25));
@@ -111,7 +114,7 @@ namespace AcademiaDoZe.Domain.Tests
             var vinculo = TipoColaborador.CLT;
 
             // Act & Assert
-            var ex = Assert.Throws<ArgumentException>(() => Colaborador.Criar(nome, cpf, dataNascimento, telefone, email, endereco, numero, complemento, senha, foto, dataAdmissao, tipo, vinculo));
+            var ex = Assert.Throws<ArgumentException>(() => Colaborador.Criar(id, nome, cpf, dataNascimento, telefone, email, endereco, numero, complemento, senha, foto, dataAdmissao, tipo, vinculo));
 
             Assert.Equal("Data de admissão não pode ser no futuro.", ex.Message);
         }

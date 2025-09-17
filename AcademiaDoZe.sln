@@ -7,7 +7,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcademiaDoZe", "AcademiaDoZ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcademiaDoZe.Domain.Tests", "AcademiaDoZe.Domain.Tests\AcademiaDoZe.Domain.Tests.csproj", "{746C7D46-5512-4FD1-8F44-D299D41697AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcedemiaDoZe.Infrastructure", "AcedemiaDoZe.Infrastructure\AcedemiaDoZe.Infrastructure.csproj", "{93788F35-75B4-4EF5-9274-1F484114654F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcademiaDoZe.Infrastructure.Tests", "AcademiaDoZe.Infrastructure.Tests\AcademiaDoZe.Infrastructure.Tests.csproj", "{799E0E43-70AA-4209-ABFD-B958ECF6B637}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcademiaDoZe.Application", "AcademiaDoZe.Application\AcademiaDoZe.Application.csproj", "{5BEECA00-94C0-4C53-BA6E-D2F9658658DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcademiaDoZe.Application.Tests", "AcademiaDoZe.Application.Tests\AcademiaDoZe.Application.Tests.csproj", "{21953A33-18C0-487D-8FE9-7B5E09768762}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcademiaDoZe.Infrastructure", "AcademiaDoZe.Infrastructure\AcademiaDoZe.Infrastructure.csproj", "{F981EC33-B0AA-9A21-AF9E-3C21DA53FC32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcademiaDoZe.Presentation.AppMaui", "AcademiaDoZe.Presentation.AppMaui\AcademiaDoZe.Presentation.AppMaui.csproj", "{7C1EF268-7B0B-4331-8EE0-ECC15E85B022}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +31,27 @@ Global
 		{746C7D46-5512-4FD1-8F44-D299D41697AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{746C7D46-5512-4FD1-8F44-D299D41697AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{746C7D46-5512-4FD1-8F44-D299D41697AA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{93788F35-75B4-4EF5-9274-1F484114654F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{93788F35-75B4-4EF5-9274-1F484114654F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{93788F35-75B4-4EF5-9274-1F484114654F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{93788F35-75B4-4EF5-9274-1F484114654F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{799E0E43-70AA-4209-ABFD-B958ECF6B637}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{799E0E43-70AA-4209-ABFD-B958ECF6B637}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{799E0E43-70AA-4209-ABFD-B958ECF6B637}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{799E0E43-70AA-4209-ABFD-B958ECF6B637}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BEECA00-94C0-4C53-BA6E-D2F9658658DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BEECA00-94C0-4C53-BA6E-D2F9658658DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BEECA00-94C0-4C53-BA6E-D2F9658658DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BEECA00-94C0-4C53-BA6E-D2F9658658DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21953A33-18C0-487D-8FE9-7B5E09768762}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21953A33-18C0-487D-8FE9-7B5E09768762}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21953A33-18C0-487D-8FE9-7B5E09768762}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21953A33-18C0-487D-8FE9-7B5E09768762}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F981EC33-B0AA-9A21-AF9E-3C21DA53FC32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F981EC33-B0AA-9A21-AF9E-3C21DA53FC32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F981EC33-B0AA-9A21-AF9E-3C21DA53FC32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F981EC33-B0AA-9A21-AF9E-3C21DA53FC32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C1EF268-7B0B-4331-8EE0-ECC15E85B022}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C1EF268-7B0B-4331-8EE0-ECC15E85B022}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C1EF268-7B0B-4331-8EE0-ECC15E85B022}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{7C1EF268-7B0B-4331-8EE0-ECC15E85B022}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C1EF268-7B0B-4331-8EE0-ECC15E85B022}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

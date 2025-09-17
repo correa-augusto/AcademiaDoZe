@@ -12,10 +12,11 @@ namespace AcademiaDoZe.Domain.Tests
     {
 
         private Arquivo GetArquivoValido() => Arquivo.Criar(new byte[1]);
-        private Endereco GetValidarLogradouro() => Endereco.Criar("12345678", "Rua A", "Centro", "Cidade", "SP", "Brasil");
+        private Logradouro GetValidarLogradouro() => Logradouro.Criar(0, "12345678", "Rua A", "Centro", "Cidade", "SP", "Brasil");
         private Pessoa CriarPessoaValida()
         {
             return Aluno.Criar(
+                0,
                 nome: "Maria Souza",
                 cpf: "98765432100",
                 dataNascimento: DateOnly.FromDateTime(DateTime.Today.AddYears(-25)),
@@ -25,7 +26,6 @@ namespace AcademiaDoZe.Domain.Tests
                 numero: "200",
                 complemento: "Casa",
                 senha: "senha123",
-                objetivo: "Condicionamento físico",
                 foto: GetArquivoValido()
             );
         }

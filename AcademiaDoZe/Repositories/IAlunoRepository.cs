@@ -8,5 +8,7 @@ namespace AcademiaDoZe.Domain.Repositories
 
         Task<bool> CpfJaExiste(string cpf, int? id = null);
         Task<bool> TrocarSenha(int id, string novaSenha);
+
+        Task LimparTabela();
     }
 }

@@ -9,6 +9,7 @@ using AcademiaDoZe.Domain.ValueObject;
 namespace AcademiaDoZe.Domain.Entities;
 public sealed class Matricula : Entity
 {
+    public int Id { get; }
     public Aluno AlunoMatricula { get; }
     public TipoPlano Plano { get; }
     public DateOnly DataInicio { get; }
@@ -17,22 +18,26 @@ public sealed class Matricula : Entity
     public Restricoes RestricoesMedicas { get; }
     public string ObservacoesRestricoes { get; }
     public Arquivo LaudoMedico { get; }
-    private Matricula(Aluno alunoMatricula,
+
+    private Matricula(int id, Aluno alunoMatricula,
     TipoPlano plano,
     DateOnly dataInicio,
     DateOnly dataFim,
     string objetivo,
     Restricoes restricoesMedicas,
+    string observacoesRestricoes,
     Arquivo laudoMedico)
 
     : base()
     {
+        Id = id;
         AlunoMatricula = alunoMatricula;
         Plano = plano;
         DataInicio = dataInicio;
         DataFim = dataFim;
         Objetivo = objetivo;
         RestricoesMedicas = restricoesMedicas;
+        ObservacoesRestricoes = observacoesRestricoes;
         LaudoMedico = laudoMedico;
     }
 
@@ -42,7 +47,7 @@ public sealed class Matricula : Entity
         var hoje = DateOnly.FromDateTime(DateTime.Today);
         return (DataFim.DayNumber - hoje.DayNumber);
     }
-    public static Matricula Criar(Aluno alunoMatricula, TipoPlano plano, DateOnly dataInicio, DateOnly dataFim, string objetivo, Restricoes restricoesMedicas, Arquivo laudoMedico)
+    public static Matricula Criar(int id, Aluno alunoMatricula, TipoPlano plano, DateOnly dataInicio, DateOnly dataFim, string objetivo, Restricoes restricoesMedicas, string observacoesRestricoes, Arquivo laudoMedico)
     {
 
         if (alunoMatricula == null) throw new ArgumentNullException(nameof(alunoMatricula));
@@ -67,6 +72,6 @@ public sealed class Matricula : Entity
 
         if (!Enum.IsDefined(typeof(Restricoes), restricoesMedicas)) throw new ArgumentException("Tipo de restrição inválido.");
 
-        return new Matricula(alunoMatricula, plano, dataInicio, dataFim, objetivo, restricoesMedicas, laudoMedico);
+        return new Matricula(id, alunoMatricula, plano, dataInicio, dataFim, objetivo, restricoesMedicas, observacoesRestricoes, laudoMedico);
     }
 }
